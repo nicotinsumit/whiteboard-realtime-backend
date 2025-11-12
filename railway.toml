@@ -1,0 +1,17 @@
+# Railway Configuration
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile.railway"
+
+[deploy]
+startCommand = "node server-prod.js"
+healthcheckPath = "/api/health"
+healthcheckTimeout = 300
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+# Environment variables (these will be set in Railway dashboard)
+# NODE_ENV=production
+# PORT=4000
+# JWT_SECRET=your-jwt-secret
+# CORS_ORIGIN=your-frontend-url
